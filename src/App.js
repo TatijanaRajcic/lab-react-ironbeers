@@ -4,7 +4,6 @@ import './App.css';
 import Nav from "./components/Nav";
 import Home from "./pages/Home";
 import AllBeers from "./pages/AllBeers";
-import RandomBeer from "./pages/RandomBeer";
 import NewBeer from "./pages/NewBeer";
 import BeerDetail from "./components/BeerDetail";
 import {Route} from "react-router-dom";

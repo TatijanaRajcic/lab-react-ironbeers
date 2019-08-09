@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from "axios";
 import "../stylesheets/BeerDetail.css";
-import { withRouter } from "react-router";
 
 class BeerDetail extends Component {
 
@@ -27,7 +26,6 @@ class BeerDetail extends Component {
       .catch((error)=>{
         this.setState({error:error})
       })
-
   }
 
   render() {
