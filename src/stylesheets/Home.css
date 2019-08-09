@@ -1,0 +1,27 @@
+.Home img {
+  width: 100vw;
+}
+
+.Home article{
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: start;
+}
+
+.Home .Link {
+  text-decoration: none;
+  color:black
+}
+
+.Home .ContentContainer{
+  padding:2% 4% 2% 4%
+}
+
+.Home h1, p{
+  margin:1% 0%
+}
+
+.Home .ContentContainer p{
+  color:grey
+}

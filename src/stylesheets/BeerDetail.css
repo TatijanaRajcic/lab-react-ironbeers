@@ -1,0 +1,38 @@
+.BeerDetail {
+  display:flex;
+  flex-direction: column;
+  text-align: start;
+  padding:5%
+}
+
+.BeerDetail .BeerDetailImage {
+  height: 35vh;
+  text-align: center;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.BeerDetail .BeerDetailImage img{
+  height: 33vh;
+}
+
+.BeerDetail .BeerDetailInfo {
+  display:flex;
+  widows: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between
+}
+
+.BeerDetail .BeerDetailInfo h1{
+  font-weight: lighter
+}
+
+.BeerDetail .Grey {
+  color:grey
+}
+
+.BeerDetail .Bold {
+  font-weight: bold;
+}

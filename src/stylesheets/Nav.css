@@ -1,0 +1,11 @@
+.Nav {
+  background-color:#38C3F7;
+  height:8vh;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Nav img {
+  height:5vh
+}
