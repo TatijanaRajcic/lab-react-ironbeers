@@ -34,9 +34,7 @@ class NewBeer extends Component {
         url: `${process.env.REACT_APP_API}/beers/new`
     })
     .then((response)=> {
-        /* extra
-        https://stackoverflow.com/questions/31079081/programmatically-navigate-using-react-router
-        */
+      this.props.history.push("/");
     })
     .catch((error)=> {
         console.log(error)
