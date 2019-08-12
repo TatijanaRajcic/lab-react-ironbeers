@@ -8,6 +8,15 @@ export default function Nav() {
       <Link to="/">
         <img src="./images/home.png" alt="home img"/>
       </Link>
+      <Link to="/signup">
+        Sign up
+      </Link>
+      <Link to="/login">
+        Login
+      </Link>
+      <Link to="/logout">
+        Logout
+      </Link>
     </nav>
   )
 }
