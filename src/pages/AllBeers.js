@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from "axios";
 import BeerItem from "../components/BeerItem";
+import MainLayout from "../layout/MainLayout";
 import {Link} from "react-router-dom";
 import "../stylesheets/AllBeers.css"
 
@@ -45,10 +46,12 @@ class AllBeers extends Component {
       )
     })
 
-    return (
-      <div className="AllBeers">
-        {allBeers}
-      </div>
+    return ( 
+      <MainLayout>
+        <div className="AllBeers">
+          {allBeers}
+        </div>
+      </MainLayout>
     )
   }
 }

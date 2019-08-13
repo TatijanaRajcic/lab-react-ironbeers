@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from "axios";
+import MainLayout from "../layout/MainLayout";
 import "../stylesheets/BeerDetail.css";
 
 class BeerDetail extends Component {
@@ -33,19 +34,21 @@ class BeerDetail extends Component {
     let foundBeer = this.state.beer;
 
     return (
-      <div className="BeerDetail">
-        <div className="BeerDetailImage">
-          <img src={foundBeer.image_url} alt="beer"/>
+      <MainLayout>
+        <div className="BeerDetail">
+          <div className="BeerDetailImage">
+            <img src={foundBeer.image_url} alt="beer"/>
+          </div>
+          <div className="BeerDetailInfo">
+            <h1>{foundBeer.name}</h1>
+            <p className="Grey">{foundBeer.attenuation_level}</p>
+            <p className="Grey">{foundBeer.tagline}</p>
+            <p className="Bold">{foundBeer.first_brewed}</p>
+          </div>
+          <p>{foundBeer.description}</p>
+          <p className="Grey">{foundBeer.contributed_by}</p>
         </div>
-        <div className="BeerDetailInfo">
-          <h1>{foundBeer.name}</h1>
-          <p className="Grey">{foundBeer.attenuation_level}</p>
-          <p className="Grey">{foundBeer.tagline}</p>
-          <p className="Bold">{foundBeer.first_brewed}</p>
-        </div>
-        <p>{foundBeer.description}</p>
-        <p className="Grey">{foundBeer.contributed_by}</p>
-      </div>
+      </MainLayout>
     )
   }
 

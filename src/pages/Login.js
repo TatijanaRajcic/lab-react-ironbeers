@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MainLayout from "../layout/MainLayout";
 import Auth from "../utils/Auth";
 const auth = new Auth();
 
@@ -40,23 +41,25 @@ class Login extends Component {
 
   render(){
     return (
-      <div className="Login">
-        <form onSubmit={this.handleFormSubmit} style={{display: "flex", "flex-wrap": "wrap"}}>{/* we don't want the default form submitting behaviour, so we're adding own submit handler   */}
-          <div>
-            <label>Username</label>
-            <input type="text" name="username" placeholder="username" value={this.state.user.username} onChange={this.handleFormChange} /> {/* reacts wants to be in charge of all the data   */}
-          </div>
+      <MainLayout>
+        <div className="Login">
+          <form onSubmit={this.handleFormSubmit} style={{display: "flex", "flex-wrap": "wrap"}}>{/* we don't want the default form submitting behaviour, so we're adding own submit handler   */}
+            <div>
+              <label>Username</label>
+              <input type="text" name="username" placeholder="username" value={this.state.user.username} onChange={this.handleFormChange} /> {/* reacts wants to be in charge of all the data   */}
+            </div>
 
-          <div>
-            <label>Password</label>
-            <input type="password" name="password" placeholder="password" value={this.state.user.password} onChange={this.handleFormChange} />{/* reacts wants to be in charge of all the data   */}
-          </div>
+            <div>
+              <label>Password</label>
+              <input type="password" name="password" placeholder="password" value={this.state.user.password} onChange={this.handleFormChange} />{/* reacts wants to be in charge of all the data   */}
+            </div>
 
-          <div>
-            <input type="submit" value="Login" />
-          </div>
-        </form>
-    </div>
+            <div>
+              <input type="submit" value="Login" />
+            </div>
+          </form>
+        </div>
+      </MainLayout>
     )
   }
 }

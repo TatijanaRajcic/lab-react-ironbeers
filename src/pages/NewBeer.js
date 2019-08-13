@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from "axios";
 import qs from "querystring"; // used for parsing a javascript object in the right format (x-www-form-urlencoded)
+import MainLayout from "../layout/MainLayout";
 import "../stylesheets/NewBeer.css";
 
 class NewBeer extends Component {
@@ -21,17 +22,17 @@ class NewBeer extends Component {
 
   handleFormChange = (e)=> {
     this.setState({ 
-        [e.target.name]: e.target.value // within the square brackets "[]" you can use dynamic keys
+      [e.target.name]: e.target.value // within the square brackets "[]" you can use dynamic keys
     })
   }
 
   handleFormSubmit = (e)=> {
     e.preventDefault(); // disable the default form behavious (redirecting to a new page)
     axios({
-        method: "POST",
-        headers: { 'content-type': 'application/x-www-form-urlencoded' },
-        data:  qs.stringify(this.state), // don't send data in json format => cors error
-        url: `${process.env.REACT_APP_API}/beers/new`
+      method: "POST",
+      headers: { 'content-type': 'application/x-www-form-urlencoded' },
+      data:  qs.stringify(this.state), // don't send data in json format => cors error
+      url: `${process.env.REACT_APP_API}/beers/new`
     })
     .then((response)=> {
       this.props.history.push("/");
@@ -44,45 +45,47 @@ class NewBeer extends Component {
 
   render(){
     return (
-      <div className="NewBeer">
-        <form onSubmit={this.handleFormSubmit} style={{display: "flex", "flex-wrap": "wrap"}}>{/* we don't want the default form submitting behaviour, so we're adding own submit handler   */}
-          <div>
-            <label>Name</label>
-            <input type="text" name="name" placeholder="name" value={this.state.name} onChange={this.handleFormChange} /> {/* reacts wants to be in charge of all the data   */}
-          </div>
+      <MainLayout>
+        <div className="NewBeer">
+          <form onSubmit={this.handleFormSubmit} style={{display: "flex", "flex-wrap": "wrap"}}>{/* we don't want the default form submitting behaviour, so we're adding own submit handler   */}
+            <div>
+              <label>Name</label>
+              <input type="text" name="name" placeholder="name" value={this.state.name} onChange={this.handleFormChange} /> {/* reacts wants to be in charge of all the data   */}
+            </div>
 
-          <div>
-            <label>Tagline</label>
-            <input type="text" name="tagline" placeholder="tagline" value={this.state.tagline} onChange={this.handleFormChange} />{/* reacts wants to be in charge of all the data   */}
-          </div>
+            <div>
+              <label>Tagline</label>
+              <input type="text" name="tagline" placeholder="tagline" value={this.state.tagline} onChange={this.handleFormChange} />{/* reacts wants to be in charge of all the data   */}
+            </div>
 
-          <div>
-            <label>First Brewed</label>
-            <input type="text" name="first_brewed" placeholder="first brewed" checked={this.state.first_brewed} onChange={this.handleFormChange} />{/* reacts wants to be in charge of all the data   */}
-          </div>
+            <div>
+              <label>First Brewed</label>
+              <input type="text" name="first_brewed" placeholder="first brewed" checked={this.state.first_brewed} onChange={this.handleFormChange} />{/* reacts wants to be in charge of all the data   */}
+            </div>
 
-          <div>
-            <label>Brewers Tip</label>
-            <input type="text" name="brewers_tips" placeholder="brewers tip" checked={this.state.brewers_tips} onChange={this.handleFormChange} />{/* reacts wants to be in charge of all the data   */}
-          </div>
-          <div>
-            <label>Attenuation Level</label>
-            <input type="number" name="attenuation_level" placeholder="attenuation level" checked={this.state.attenuation_level} onChange={this.handleFormChange} />{/* reacts wants to be in charge of all the data   */}
-          </div>
-          <div>
-            <label>Contributed By</label>
-            <input type="text" name="contributed_by" placeholder="contributed by" checked={this.state.first_brewed} onChange={this.handleFormChange} />{/* reacts wants to be in charge of all the data   */}
-          </div>
+            <div>
+              <label>Brewers Tip</label>
+              <input type="text" name="brewers_tips" placeholder="brewers tip" checked={this.state.brewers_tips} onChange={this.handleFormChange} />{/* reacts wants to be in charge of all the data   */}
+            </div>
+            <div>
+              <label>Attenuation Level</label>
+              <input type="number" name="attenuation_level" placeholder="attenuation level" checked={this.state.attenuation_level} onChange={this.handleFormChange} />{/* reacts wants to be in charge of all the data   */}
+            </div>
+            <div>
+              <label>Contributed By</label>
+              <input type="text" name="contributed_by" placeholder="contributed by" checked={this.state.first_brewed} onChange={this.handleFormChange} />{/* reacts wants to be in charge of all the data   */}
+            </div>
 
-          <div>
-            <label>Description</label>
-            <textarea type="text" placeholder="description"  name="description" value={this.state.description} onChange={this.handleFormChange} />{/* reacts wants to be in charge of all the data   */}
-          </div>
-          <div>
-            <input id = "BlueButton" type="submit" value="ADD NEW" />
-          </div>
-        </form>
-    </div>
+            <div>
+              <label>Description</label>
+              <textarea type="text" placeholder="description"  name="description" value={this.state.description} onChange={this.handleFormChange} />{/* reacts wants to be in charge of all the data   */}
+            </div>
+            <div>
+              <input id = "BlueButton" type="submit" value="ADD NEW" />
+            </div>
+          </form>
+        </div>
+      </MainLayout>
     )
   }
 }

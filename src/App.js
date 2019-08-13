@@ -1,7 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Nav from "./components/Nav";
 import Home from "./pages/Home";
 import AllBeers from "./pages/AllBeers";
 import NewBeer from "./pages/NewBeer";
@@ -14,9 +12,8 @@ import {Route} from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      <Nav />
       <Route exact path="/" component={Home}/> 
-      {/* the Home page gets rendered because when we open the app we are on the "/" route */}
+      {/* the Home page gets rendered when we load the app because when we open the app we are on the "/" route */}
       <Route path="/beers" component={AllBeers} />
       <Route path="/random-beer" component={BeerDetail} />
       <Route path="/new-beer" component={NewBeer} />
