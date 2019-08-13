@@ -15,7 +15,8 @@ function App() {
   return (
     <div className="App">
       <Nav />
-      <Route exact path="/" component={Home}/>
+      <Route exact path="/" component={Home}/> 
+      {/* the Home page gets rendered because when we open the app we are on the "/" route */}
       <Route path="/beers" component={AllBeers} />
       <Route path="/random-beer" component={BeerDetail} />
       <Route path="/new-beer" component={NewBeer} />
